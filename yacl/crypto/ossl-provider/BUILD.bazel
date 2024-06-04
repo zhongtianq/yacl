@@ -67,7 +67,7 @@ yacl_cc_library(
         "//yacl/crypto:openssl_wrappers",  # openssl here
         "//yacl/crypto/rand/entropy_source",  # use yacl es
     ],
-    alwayslink = True,  # DO NOT DELETE THIS
+    # alwayslink = True,  # DO NOT DELETE THIS
 )
 
 # public target

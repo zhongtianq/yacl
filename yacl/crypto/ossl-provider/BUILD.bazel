@@ -52,7 +52,7 @@ yacl_cc_library(
     ],
 )
 
-# private target
+# public target
 yacl_cc_library(
     name = "provider",
     srcs = [
@@ -62,7 +62,7 @@ yacl_cc_library(
         "rand_impl.h",
         "version.h",
     ],
-    visibility = ["//visibility:private"],
+    visibility = ["//visibility:public"],
     deps = [
         "//yacl/crypto:openssl_wrappers",  # openssl here
         "//yacl/crypto/rand/entropy_source",  # use yacl es
@@ -70,13 +70,13 @@ yacl_cc_library(
     alwayslink = True,  # DO NOT DELETE THIS
 )
 
-# private target
+# public target
 exports_files(
     [
         "linux_exported_syms.lds",
         "macos_exported_syms.lds",
     ],
-    visibility = ["//visibility:private"],
+    visibility = ["//visibility:public"],
 )
 
 yacl_cc_test(

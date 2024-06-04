@@ -24,13 +24,13 @@ yacl_cc_library(
     ],
 )
 
-# private spi
+# public spi
 yacl_cc_library(
     name = "spi",
     hdrs = [
         "drbg.h",
     ],
-    visibility = ["//visibility:private"],
+    visibility = ["//visibility:public"],
     deps = [
         "//yacl:secparam",
         "//yacl/base:byte_container_view",
@@ -40,7 +40,7 @@ yacl_cc_library(
     ],
 )
 
-# private openssl drbg impl
+# public openssl drbg impl
 yacl_cc_library(
     name = "openssl_factory",
     srcs = [
@@ -52,7 +52,7 @@ yacl_cc_library(
     data = [
         "//yacl/crypto/ossl-provider:prov_shared",  # openssl provider shared lib
     ],
-    visibility = ["//visibility:private"],
+    visibility = ["//visibility:public"],
     deps = [
         ":spi",
         "//yacl/crypto:openssl_wrappers",
@@ -74,7 +74,7 @@ yacl_cc_library(
     data = [
         "//yacl/crypto/ossl-provider:prov_shared",  # openssl provider shared lib
     ],
-    visibility = ["//visibility:private"],
+    visibility = ["//visibility:public"],
     deps = [
         ":spi",
         "//yacl/crypto:openssl_wrappers",
